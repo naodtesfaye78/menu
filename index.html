@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>double - 3D Menu</title>
+    <title>Bjvuv - 3D Menu</title>
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -91,72 +91,61 @@
 </head>
 <body>
     <div class="header">
-        <h1>🍽️ double</h1>
+        <h1>🍽️ Bjvuv</h1>
         <p>Tap any dish to see it in 3D!</p>
     </div>
+    
     <div class="menu-grid">
         
         <div class="food-card" onclick="showModel(0)">
-            <img src="https://api.telegram.org/file/bot8680221799:AAEi8Jd7FXm5M1SKEbYbmqgeIcLiMjDiRUg/photos/file_4.jpg" alt="Burger">
+            <img src="https://api.telegram.org/file/bot8680221799:AAEi8Jd7FXm5M1SKEbYbmqgeIcLiMjDiRUg/photos/file_4.jpg" alt="Hvhvv">
             <div class="food-info">
-                <h3>Burger</h3>
-                <p class="price">250 ETB</p>
+                <h3>Hvhvv</h3>
+                <p class="price">250</p>
                 <button>👁️ View in 3D</button>
             </div>
         </div>
         
     </div>
+    
     <div class="modal" id="modal">
         <div class="modal-header">
             <h2 id="modelTitle"></h2>
             <p id="modelPrice"></p>
         </div>
         <model-viewer
-    id="modelViewer"
-    src=""
-    ios-src=""
-    ar
-    ar-modes="scene-viewer quick-look webxr"
-    ar-scale="auto"
-    camera-controls
-    auto-rotate
-    shadow-intensity="1"
-    exposure="1.2"
-    style="width: 90vw; height: 60vh;">
-</model-viewer> 
-
-<button onclick="document.getElementById('modelViewer').activateAR()" 
-style="margin-top:10px; padding:12px; background:#27ae60; color:white; border:none; border-radius:10px;">
-📱 View on your table (AR)
-</button>
-
-<p class="hint">
-    👆 Drag to rotate • Pinch to zoom<br>
-    📱 Tap "View on your table" to use your camera
-</p>
-
+            id="modelViewer"
+            auto-rotate
+            camera-controls
+            shadow-intensity="1"
+            exposure="1.2">
+        </model-viewer>
+        <p class="hint">👆 Drag to rotate • Pinch to zoom</p>
         <button class="close-btn" onclick="closeModal()">✕ Close</button>
     </div>
+
     <script>
         const modal = document.getElementById('modal');
         const viewer = document.getElementById('modelViewer');
         const title = document.getElementById('modelTitle');
         const price = document.getElementById('modelPrice');
+        
         function showModel(index) {
             modal.classList.add('active');
             
         if(index === 0) {
             viewer.src = "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/main/2.0/Duck/glTF-Binary/Duck.glb";
-viewer.setAttribute("ios-src", "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/main/2.0/Duck/glTF-Binary/Duck.usdz");
-            title.textContent = "Burger";
-            price.textContent = "250 ETB";
+            title.textContent = "Hvhvv";
+            price.textContent = "250";
         }
         
         }
+        
         function closeModal() {
             modal.classList.remove('active');
             viewer.src = '';
         }
+        
         modal.addEventListener('click', function(e) {
             if(e.target === modal) closeModal();
         });
